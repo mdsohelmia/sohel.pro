@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Player</h1>
+    <main className="w-[300px] h-screen mx-auto">
       <iframe
+        className="w-full h-full"
         src="https://cdn.dhakalive.tv/jsplayer.html"
         title="Gotipath Live"
       ></iframe>
