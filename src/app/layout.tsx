@@ -5,6 +5,7 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import Script from 'next/script'
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -68,6 +69,26 @@ export default function RootLayout({
           </TooltipProvider>
         </ThemeProvider>
       </body>
+
+
+      <Script>
+        {`
+       (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: '6zmoCSGZqBeqarCkLhJzboMF',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    `}
+      </Script>
     </html>
   );
 }
